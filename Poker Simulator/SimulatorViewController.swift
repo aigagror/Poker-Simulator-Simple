@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SimulatorViewController.swift
 //  Poker Simulator
 //
 //  Created by Edward Huang on 10/15/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SimulatorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
