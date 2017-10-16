@@ -16,4 +16,25 @@ struct Hand {
     var handType: HandType
     
     var values: [Int]
+    
+    
+    init(cards: [Card]) {
+        
+        
+        
+    }
+    
+    
+    private func getNumberOfValues(for handType: HandType) -> Int {
+        switch handType {
+        case .highCard, .flush:
+            return 5
+        case .onePair:
+            return 4
+        case .twoPair:
+            return 3
+        default:
+            return 1
+        }
+    }
 }
