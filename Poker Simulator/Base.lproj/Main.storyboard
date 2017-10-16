@@ -31,8 +31,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhS-OV-B2f">
+                                        <rect key="frame" x="0.0" y="31.5" width="375" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="M32-cD-IEc" userLabel="Cards">
-                                        <rect key="frame" x="0.0" y="31.5" width="375" height="374.5"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="375" height="374.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="63k-qZ-mta" userLabel="Community Cards">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -112,7 +118,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2X-7k-85S">
-                                        <rect key="frame" x="0.0" y="406" width="375" height="241"/>
+                                        <rect key="frame" x="0.0" y="424" width="375" height="223"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="Random Hand">
                                             <color key="titleColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -138,6 +144,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="handLabel" destination="mhS-OV-B2f" id="xIG-z9-4gp"/>
                         <outletCollection property="communityCardImageViews" destination="J0u-hy-KSY" collectionClass="NSMutableArray" id="Kh4-w7-fYY"/>
                         <outletCollection property="communityCardImageViews" destination="42o-Z5-nO1" collectionClass="NSMutableArray" id="CPH-fK-fbl"/>
                         <outletCollection property="communityCardImageViews" destination="5Yo-QB-aud" collectionClass="NSMutableArray" id="HpS-fC-oXx"/>

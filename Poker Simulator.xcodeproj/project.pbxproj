@@ -15,6 +15,7 @@
 		2CD865771F945A78001E5D9B /* Poker_SimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD865761F945A78001E5D9B /* Poker_SimulatorTests.swift */; };
 		2CD865821F94619B001E5D9B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD865811F94619B001E5D9B /* Card.swift */; };
 		2CD865841F9461D8001E5D9B /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD865831F9461D8001E5D9B /* Suit.swift */; };
+		2CD865861F94678D001E5D9B /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD865851F94678D001E5D9B /* Hand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		2CD865781F945A78001E5D9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CD865811F94619B001E5D9B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2CD865831F9461D8001E5D9B /* Suit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suit.swift; sourceTree = "<group>"; };
+		2CD865851F94678D001E5D9B /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				2CD865811F94619B001E5D9B /* Card.swift */,
 				2CD865831F9461D8001E5D9B /* Suit.swift */,
 				2CD865651F945A78001E5D9B /* Main.storyboard */,
+				2CD865851F94678D001E5D9B /* Hand.swift */,
 				2CD865681F945A78001E5D9B /* Assets.xcassets */,
 				2CD8656A1F945A78001E5D9B /* LaunchScreen.storyboard */,
 				2CD8656D1F945A78001E5D9B /* Info.plist */,
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CD865641F945A78001E5D9B /* SimulatorViewController.swift in Sources */,
+				2CD865861F94678D001E5D9B /* Hand.swift in Sources */,
 				2CD865821F94619B001E5D9B /* Card.swift in Sources */,
 				2CD865841F9461D8001E5D9B /* Suit.swift in Sources */,
 				2CD865621F945A78001E5D9B /* AppDelegate.swift in Sources */,

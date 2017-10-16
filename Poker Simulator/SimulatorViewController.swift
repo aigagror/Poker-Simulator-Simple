@@ -13,6 +13,9 @@ class SimulatorViewController: UIViewController {
     
     @IBOutlet var playerCardImageViews: [UIImageView]!
     
+    @IBOutlet weak var handLabel: UILabel!
+    
+    
     var deck: [Card] = []
     
     override func viewDidLoad() {
