@@ -5,7 +5,9 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,6 +22,104 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="zQ9-4x-ZTl">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zz0-U6-qVg" userLabel="Main Stack">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poker Simulator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJa-xe-Yiw">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="31.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="M32-cD-IEc" userLabel="Cards">
+                                        <rect key="frame" x="0.0" y="31.5" width="375" height="374.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="63k-qZ-mta" userLabel="Community Cards">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J0u-hy-KSY" userLabel="card">
+                                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="99.5"/>
+                                                        <color key="backgroundColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="J0u-hy-KSY" secondAttribute="height" multiplier="500:726" id="jTj-Wb-aza"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="42o-Z5-nO1" userLabel="card">
+                                                        <rect key="frame" x="76.5" y="0.0" width="68.5" height="99.5"/>
+                                                        <color key="backgroundColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="42o-Z5-nO1" secondAttribute="height" multiplier="500:726" id="wgg-Tk-8JD"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Yo-QB-aud" userLabel="card">
+                                                        <rect key="frame" x="153" y="0.0" width="69" height="99.5"/>
+                                                        <color key="backgroundColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="5Yo-QB-aud" secondAttribute="height" multiplier="500:726" id="iHn-7w-R40"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wNG-QB-wGs" userLabel="card">
+                                                        <rect key="frame" x="230" y="0.0" width="68.5" height="99.5"/>
+                                                        <color key="backgroundColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="wNG-QB-wGs" secondAttribute="height" multiplier="500:726" id="5G7-uD-pbP"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dbi-Cu-ztl" userLabel="card">
+                                                        <rect key="frame" x="306.5" y="0.0" width="68.5" height="99.5"/>
+                                                        <color key="backgroundColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="dbi-Cu-ztl" secondAttribute="height" multiplier="500:726" id="Ei3-HM-zPZ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="5Yo-QB-aud" firstAttribute="width" secondItem="5Yo-QB-aud" secondAttribute="height" multiplier="500:726" id="087-vC-zL2"/>
+                                                    <constraint firstItem="dbi-Cu-ztl" firstAttribute="width" secondItem="dbi-Cu-ztl" secondAttribute="height" multiplier="500:726" id="3Bi-Z0-HvV"/>
+                                                    <constraint firstItem="wNG-QB-wGs" firstAttribute="width" secondItem="wNG-QB-wGs" secondAttribute="height" multiplier="500:726" id="3db-MS-O2X"/>
+                                                    <constraint firstItem="J0u-hy-KSY" firstAttribute="width" secondItem="J0u-hy-KSY" secondAttribute="height" multiplier="500:726" id="CCr-N5-pmK"/>
+                                                    <constraint firstItem="wNG-QB-wGs" firstAttribute="width" secondItem="wNG-QB-wGs" secondAttribute="height" multiplier="500:726" id="HYs-JP-Bs1"/>
+                                                    <constraint firstItem="42o-Z5-nO1" firstAttribute="width" secondItem="42o-Z5-nO1" secondAttribute="height" multiplier="500:726" id="Mfy-8I-isF"/>
+                                                    <constraint firstItem="J0u-hy-KSY" firstAttribute="width" secondItem="J0u-hy-KSY" secondAttribute="height" multiplier="500:726" id="UsT-6F-jWm"/>
+                                                    <constraint firstItem="dbi-Cu-ztl" firstAttribute="width" secondItem="dbi-Cu-ztl" secondAttribute="height" multiplier="500:726" id="apU-VM-YCw"/>
+                                                    <constraint firstItem="wNG-QB-wGs" firstAttribute="width" secondItem="wNG-QB-wGs" secondAttribute="height" multiplier="500:726" id="dKb-1c-EOu"/>
+                                                    <constraint firstItem="dbi-Cu-ztl" firstAttribute="width" secondItem="dbi-Cu-ztl" secondAttribute="height" multiplier="500:726" id="kIt-Gf-pJu"/>
+                                                    <constraint firstItem="5Yo-QB-aud" firstAttribute="width" secondItem="5Yo-QB-aud" secondAttribute="height" multiplier="500:726" id="qyr-mg-TFV"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bya-8R-wdd" userLabel="Player Cards">
+                                                <rect key="frame" x="0.0" y="107.5" width="375" height="267"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KCB-W5-4Qd" userLabel="card">
+                                                        <rect key="frame" x="0.0" y="0.0" width="183.5" height="267"/>
+                                                        <color key="backgroundColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="KCB-W5-4Qd" secondAttribute="height" multiplier="500:726" id="CkE-uD-aBs"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iFP-5d-ZG8" userLabel="card">
+                                                        <rect key="frame" x="191.5" y="0.0" width="183.5" height="267"/>
+                                                        <color key="backgroundColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="iFP-5d-ZG8" secondAttribute="height" multiplier="500:726" id="0cj-Dv-HPM"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="KCB-W5-4Qd" firstAttribute="width" secondItem="KCB-W5-4Qd" secondAttribute="height" multiplier="500:726" id="Cwm-0N-9hl"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2X-7k-85S">
+                                        <rect key="frame" x="0.0" y="406" width="375" height="241"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Random Hand">
+                                            <color key="titleColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -27,9 +127,22 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zQ9-4x-ZTl" secondAttribute="trailing" id="ADW-tm-X5I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zQ9-4x-ZTl" secondAttribute="bottom" id="caA-tU-rZu"/>
                             <constraint firstItem="zQ9-4x-ZTl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="k4W-j7-ld3"/>
+                            <constraint firstItem="Zz0-U6-qVg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mo4-qf-FQc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zz0-U6-qVg" secondAttribute="trailing" id="oez-3f-3We"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zz0-U6-qVg" secondAttribute="bottom" id="qes-6F-65b"/>
+                            <constraint firstItem="Zz0-U6-qVg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tUA-4Q-Ha9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="communityCardImageViews" destination="J0u-hy-KSY" collectionClass="NSMutableArray" id="Kh4-w7-fYY"/>
+                        <outletCollection property="communityCardImageViews" destination="42o-Z5-nO1" collectionClass="NSMutableArray" id="CPH-fK-fbl"/>
+                        <outletCollection property="communityCardImageViews" destination="5Yo-QB-aud" collectionClass="NSMutableArray" id="HpS-fC-oXx"/>
+                        <outletCollection property="communityCardImageViews" destination="wNG-QB-wGs" collectionClass="NSMutableArray" id="89g-sK-I5a"/>
+                        <outletCollection property="communityCardImageViews" destination="dbi-Cu-ztl" collectionClass="NSMutableArray" id="qw6-M0-oKz"/>
+                        <outletCollection property="playerCardImageViews" destination="KCB-W5-4Qd" collectionClass="NSMutableArray" id="QA0-3j-po8"/>
+                        <outletCollection property="playerCardImageViews" destination="iFP-5d-ZG8" collectionClass="NSMutableArray" id="uVd-fW-66q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
