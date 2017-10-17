@@ -30,7 +30,7 @@ class SimulatorViewController: UIViewController {
     
     @IBAction func mainButtonWasPressed(_ sender: UIButton) {
         
-        shuffleDeck(firstN: 7)
+        Card.shuffle(cards: &deck, firstN: 7)
         
         for cardView in playerCardImageViews {
             guard let index = playerCardImageViews.index(of: cardView) else {
@@ -59,16 +59,6 @@ class SimulatorViewController: UIViewController {
         
     }
     
-    private func shuffleDeck(firstN: Int = 52) {
-        assert(firstN > 0)
-        assert(firstN <= 52)
-        
-        for i in 0..<firstN {
-            let randIndex = Int(arc4random_uniform(52))
-            let tempCard = deck[i]
-            deck[i] = deck[randIndex]
-            deck[randIndex] = tempCard
-        }
-    }
+    
 }
 

@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-/// Ace has value 14, 2 has value 2
+/// Ace has rank 14, 2 has rank 2
 struct Card {
     let suit: Suit
-    let value: Int
+    let rank: Int
     
     init(suit: Suit, value: Int) {
         self.suit = suit
-        self.value = value
+        self.rank = value
     }
     
     init(index: Int) {
@@ -29,7 +29,7 @@ struct Card {
         let value = index / 4 + 2
         
         self.suit = suit
-        self.value = value
+        self.rank = value
     }
     
     func getImage() -> UIImage {
@@ -42,6 +42,32 @@ struct Card {
     }
     
     func getIndex() -> Int {
-        return (value - 2) * 4 + suit.rawValue
+        return (rank - 2) * 4 + suit.rawValue
+    }
+    
+    static func getNewDeck(shuffled: Bool = false) -> [Card] {
+        var deck = [Card]()
+        for i in 0..<52 {
+            let card = Card(index: i)
+            deck.append(card)
+        }
+        
+        if shuffled {
+            Card.shuffle(cards: &deck)
+        }
+        
+        return deck
+    }
+    
+    static func shuffle(cards: inout [Card], firstN: Int = 52) {
+        assert(firstN > 0)
+        assert(firstN <= 52)
+        
+        for i in 0..<firstN {
+            let randIndex = Int(arc4random_uniform(52))
+            let tempCard = cards[i]
+            cards[i] = cards[randIndex]
+            cards[randIndex] = tempCard
+        }
     }
 }
