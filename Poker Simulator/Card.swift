@@ -63,8 +63,10 @@ struct Card {
         assert(firstN > 0)
         assert(firstN <= 52)
         
+        let firstN = min(firstN, cards.count)
+        
         for i in 0..<firstN {
-            let randIndex = Int(arc4random_uniform(52))
+            let randIndex = Int(arc4random_uniform(UInt32(firstN)))
             let tempCard = cards[i]
             cards[i] = cards[randIndex]
             cards[randIndex] = tempCard
