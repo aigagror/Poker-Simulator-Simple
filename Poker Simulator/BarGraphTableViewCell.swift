@@ -22,9 +22,9 @@ class BarGraphTableViewCell: UITableViewCell {
         }
     }
     
-    var handType: Hand = Hand() {
+    var handType: HandType = .highCard {
         didSet {
-            label.text = handType.string
+            label.text = Hand.getString(handType: handType)
         }
     }
 

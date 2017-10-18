@@ -12,6 +12,7 @@
 		2CD805F41F96D67F00DD368E /* SimulateManyRoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD805F31F96D67F00DD368E /* SimulateManyRoundsViewController.swift */; };
 		2CD805F61F96D73300DD368E /* SimulateSingleRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD805F51F96D73300DD368E /* SimulateSingleRoundViewController.swift */; };
 		2CD805F81F96DBA400DD368E /* RulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD805F71F96DBA400DD368E /* RulerView.swift */; };
+		2CD805FA1F96DF7E00DD368E /* PokerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD805F91F96DF7E00DD368E /* PokerSimulator.swift */; };
 		2CD865621F945A78001E5D9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD865611F945A78001E5D9B /* AppDelegate.swift */; };
 		2CD865671F945A78001E5D9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD865651F945A78001E5D9B /* Main.storyboard */; };
 		2CD865691F945A78001E5D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD865681F945A78001E5D9B /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		2CD805F31F96D67F00DD368E /* SimulateManyRoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateManyRoundsViewController.swift; sourceTree = "<group>"; };
 		2CD805F51F96D73300DD368E /* SimulateSingleRoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SimulateSingleRoundViewController.swift; path = "/Users/Eddie/Documents/Programming/iOS/Poker Simulator/Poker Simulator/SimulateSingleRoundViewController.swift"; sourceTree = "<absolute>"; };
 		2CD805F71F96DBA400DD368E /* RulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerView.swift; sourceTree = "<group>"; };
+		2CD805F91F96DF7E00DD368E /* PokerSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerSimulator.swift; sourceTree = "<group>"; };
 		2CD8655E1F945A78001E5D9B /* Poker Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poker Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD865611F945A78001E5D9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CD865661F945A78001E5D9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				2CD865811F94619B001E5D9B /* Card.swift */,
 				2CD865831F9461D8001E5D9B /* Suit.swift */,
 				2CD865651F945A78001E5D9B /* Main.storyboard */,
+				2CD805F91F96DF7E00DD368E /* PokerSimulator.swift */,
 				2CD805F71F96DBA400DD368E /* RulerView.swift */,
 				2CD805ED1F96D48D00DD368E /* HorizontalGrapBarView.swift */,
 				2CD805EB1F96D41700DD368E /* BarGraphTableViewCell.swift */,
@@ -224,6 +227,7 @@
 				2CD805F81F96DBA400DD368E /* RulerView.swift in Sources */,
 				2CD865861F94678D001E5D9B /* Hand.swift in Sources */,
 				2CD865821F94619B001E5D9B /* Card.swift in Sources */,
+				2CD805FA1F96DF7E00DD368E /* PokerSimulator.swift in Sources */,
 				2CD805F41F96D67F00DD368E /* SimulateManyRoundsViewController.swift in Sources */,
 				2CD865841F9461D8001E5D9B /* Suit.swift in Sources */,
 				2CD805EE1F96D48D00DD368E /* HorizontalGrapBarView.swift in Sources */,

@@ -23,6 +23,12 @@ class HorizontalGrapBarView: UIView {
             setNeedsDisplay()
         }
     }
+    
+    var scale: Float = 2.0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
 
     
     // Only override draw() if you perform custom drawing.
@@ -30,10 +36,15 @@ class HorizontalGrapBarView: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
         
+        let bgColor: UIColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        bgColor.set()
+        
+        UIBezierPath(rect: self.bounds).fill()
+        
         let width = self.bounds.width
         let height = self.bounds.height
         
-        let barRect = CGRect(origin: .zero, size: CGSize(width: width * CGFloat(value), height: height))
+        let barRect = CGRect(origin: .zero, size: CGSize(width: width * CGFloat(value * scale), height: height))
         
         let barPath = UIBezierPath(rect: barRect)
         

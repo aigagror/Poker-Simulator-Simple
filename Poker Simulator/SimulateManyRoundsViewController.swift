@@ -19,10 +19,25 @@ class SimulateManyRoundsViewController: UIViewController, UITableViewDelegate, U
         graphTableView.delegate = self
         graphTableView.dataSource = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func startSimulating(_ sender: Any) {
+        
+        PokerSimulator.startSimulating(update: graphTableView)
+        
+    }
+    
+    
+    @IBAction func stopSimulating(_ sender: Any) {
+        
+        PokerSimulator.stopSimulating()
+        
+    }
+    
+    
+    @IBAction func reset(_ sender: Any) {
+        
+        PokerSimulator.reset(update: graphTableView)
+        
     }
     
     
@@ -45,7 +60,11 @@ class SimulateManyRoundsViewController: UIViewController, UITableViewDelegate, U
             fatalError("Could not get graph bar cell")
         }
         
-        cell.handType = Hand(index: indexPath.row)
+        guard let handType = HandType(rawValue: indexPath.row) else {
+            fatalError("Could not get hand type")
+        }
+        
+        cell.handType = handType
         
         return cell
     }

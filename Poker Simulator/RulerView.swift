@@ -22,7 +22,7 @@ class RulerView: UIView {
         }
     }
     
-    var lineWidth: CGFloat = 5.0 {
+    var lineWidth: CGFloat = 1.0 {
         didSet {
             setNeedsDisplay()
         }
@@ -54,8 +54,14 @@ class RulerView: UIView {
         
         pencil.stroke()
         
+        let standardTickHeight = standardTickHeightToFrameHeightRatio * height
         for i in 0..<numberOfTicks {
+            let xPosition = CGFloat(i) / CGFloat(numberOfTicks-1) * width
             
+            pencil.move(to: CGPoint(x: xPosition, y: height/2 - standardTickHeight / 2))
+            pencil.addLine(to: CGPoint(x: xPosition, y: height/2 + standardTickHeight / 2))
+            
+            pencil.stroke()
         }
     }
 }

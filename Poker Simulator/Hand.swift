@@ -8,17 +8,43 @@
 
 import Foundation
 
-struct Hand {
-    enum HandType: Int {
-        case highCard = 0, onePair, twoPair, threeOfAKind, straight, flush, fullHouse, fourOfAKind, straightFlush
+enum HandType: Int {
+    case highCard = 0, onePair, twoPair, threeOfAKind, straight, flush, fullHouse, fourOfAKind, straightFlush
+}
+
+struct Hand: Hashable {
+    
+    var hashValue: Int {
+        return ranks.reduce(handType.rawValue) { (result, rank) -> Int in
+            (result << 2) + rank
+        }
+    }
+    
+    static func ==(lhs: Hand, rhs: Hand) -> Bool {
+        if lhs.handType == rhs.handType && lhs.ranks.count == rhs.ranks.count {
+            let n = lhs.ranks.count
+            
+            for i in 0..<n {
+                let v1 = lhs.ranks[i]
+                let v2 = rhs.ranks[i]
+                
+                if v1 != v2 {
+                    return false
+                }
+            }
+            
+            return true
+        } else {
+            return false
+        }
     }
     
     var handType: HandType
     
-    var values: [Int]
+    var ranks: [Int]
     
     init(cards: [Card]) {
-        (handType, values) = Hand.getHandType(cards: cards)
+        (handType, ranks) = Hand.getHandType(cards: cards)
     }
     
     init(index: Int = 0) {
@@ -27,7 +53,17 @@ struct Hand {
         }
         self.handType = handType
         
-        values = []
+        ranks = []
+    }
+    
+    private init(handType: HandType) {
+        self.handType = handType
+        self.ranks = []
+    }
+    
+    static func getString(handType: HandType) -> String {
+        let hand = Hand(handType: handType)
+        return hand.string
     }
     
     var string: String {
@@ -50,7 +86,7 @@ struct Hand {
             case .fourOfAKind:
                 return "Four of a Kind"
             case .straightFlush:
-                guard let highestValue = values.first else {
+                guard let highestValue = ranks.first else {
                     return "Straight Flush"
                 }
                 

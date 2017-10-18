@@ -181,9 +181,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUZ-5e-cvS" userLabel="Spacer">
                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVd-sH-Oi9" userLabel="Ruler">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVd-sH-Oi9" userLabel="Ruler" customClass="RulerView" customModule="Poker_Simulator" customModuleProvider="target">
                                                 <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
-                                                <color key="backgroundColor" red="0.50588238240000005" green="0.33725491169999999" blue="0.066666670139999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.96078431610000004" green="0.70588237050000002" blue="0.20000000300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -209,9 +209,10 @@
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kO-qn-7ZN" userLabel="Bar" customClass="HorizontalGrapBarView" customModule="Poker_Simulator" customModuleProvider="target">
                                                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="43.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" red="0.96078431610000004" green="0.70588237050000002" blue="0.20000000300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                     </subviews>
+                                                    <color key="backgroundColor" red="0.50588238240000005" green="0.33725491169999999" blue="0.066666670139999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="p4J-2c-yUI" firstAttribute="leading" secondItem="bGZ-hh-WWY" secondAttribute="leadingMargin" id="Nu8-Bn-n98"/>
                                                         <constraint firstAttribute="bottom" secondItem="8kO-qn-7ZN" secondAttribute="bottom" id="QHG-WN-4rA"/>
@@ -235,14 +236,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqj-Df-ggq">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="179.5"/>
                                                 <state key="normal" title="Simulate"/>
+                                                <connections>
+                                                    <action selector="startSimulating:" destination="S1x-kJ-vpo" eventType="touchUpInside" id="0Vn-dt-xOO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udD-vY-MAH">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="179.5"/>
                                                 <state key="normal" title="Stop"/>
+                                                <connections>
+                                                    <action selector="stopSimulating:" destination="S1x-kJ-vpo" eventType="touchUpInside" id="2UQ-yb-Z1n"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9he-xh-Ahl">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="179.5"/>
                                                 <state key="normal" title="Reset"/>
+                                                <connections>
+                                                    <action selector="reset:" destination="S1x-kJ-vpo" eventType="touchUpInside" id="EaS-w8-Qra"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
