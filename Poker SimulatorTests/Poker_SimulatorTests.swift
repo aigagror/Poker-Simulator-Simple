@@ -175,7 +175,7 @@ class Poker_SimulatorTests: XCTestCase {
         hand.append(Card(suit: .clubs, value: 4))
         hand.append(Card(suit: .diamonds, value: 3))
         hand.append(Card(suit: .hearts, value: 2))
-        hand.append(Card(suit: .spades, value: 5))
+        hand.append(Card(suit: .spades, value: 6))
 
         Card.shuffle(cards: &hand)
         

@@ -66,7 +66,7 @@ struct Card {
         let firstN = min(firstN, cards.count)
         
         for i in 0..<firstN {
-            let randIndex = Int(arc4random_uniform(UInt32(firstN)))
+            let randIndex = Int(arc4random_uniform(UInt32(cards.count)))
             let tempCard = cards[i]
             cards[i] = cards[randIndex]
             cards[randIndex] = tempCard

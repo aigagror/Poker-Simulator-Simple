@@ -109,27 +109,46 @@ struct Hand: Hashable {
         let sortedCards = cards.sorted { (a, b) -> Bool in
             a.rank > b.rank
         }
+    
         
         if cards.count >= 5 {
-            // Check if there's a straight
-            for i in 0..<(sortedCards.count - 5 + 1) {
-                var currValue = sortedCards[i].rank
+            
+            var rankSet = Set<Int>()
+            for card in cards {
+                rankSet.insert(card.rank)
                 
-                var foundStraight = true
-                for j in (i+1)...(i+4) {
-                    let nextValue = sortedCards[j].rank
-                    
-                    if nextValue != currValue - 1 {
-                        foundStraight = false
-                        break
-                    }
-                    currValue = nextValue
-                }
-                if foundStraight {
-                    straight = i
-                    break
+                if card.rank == 14 {
+                    // small ace
+                    rankSet.insert(1)
                 }
             }
+            
+            let sortedRanks = rankSet.sorted(by: { (a, b) -> Bool in
+                return a > b
+            })
+            
+            // Check if there's a straight
+            if sortedRanks.count >= 5 {
+                for i in 0..<(sortedRanks.count - 5 + 1) {
+                    var currValue = sortedRanks[i]
+                    
+                    var foundStraight = true
+                    for j in (i+1)...(i+4) {
+                        let nextValue = sortedRanks[j]
+                        
+                        if nextValue != currValue - 1 {
+                            foundStraight = false
+                            break
+                        }
+                        currValue = nextValue
+                    }
+                    if foundStraight {
+                        straight = i
+                        break
+                    }
+                }
+            }
+            
             
             // Check if there's a flush
             var suitCounter = [Suit:Int]()

@@ -235,21 +235,30 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqj-Df-ggq">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="179.5"/>
-                                                <state key="normal" title="Simulate"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="Simulate">
+                                                    <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="startSimulating:" destination="S1x-kJ-vpo" eventType="touchUpInside" id="0Vn-dt-xOO"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udD-vY-MAH">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="179.5"/>
-                                                <state key="normal" title="Stop"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="Stop">
+                                                    <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="stopSimulating:" destination="S1x-kJ-vpo" eventType="touchUpInside" id="2UQ-yb-Z1n"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9he-xh-Ahl">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="179.5"/>
-                                                <state key="normal" title="Reset"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="Reset">
+                                                    <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="reset:" destination="S1x-kJ-vpo" eventType="touchUpInside" id="EaS-w8-Qra"/>
                                                 </connections>

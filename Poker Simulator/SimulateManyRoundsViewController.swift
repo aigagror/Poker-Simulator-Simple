@@ -69,6 +69,14 @@ class SimulateManyRoundsViewController: UIViewController, UITableViewDelegate, U
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section != 0 {
+            return 0.0
+        }
+        let height = tableView.bounds.height
+        return height / 9
+    }
+    
 
     /*
     // MARK: - Navigation
