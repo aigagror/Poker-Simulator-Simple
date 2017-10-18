@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U51-xX-zhX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Simulator View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SimulatorViewController" customModule="Poker_Simulator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SimulateSingleRoundViewController" customModule="Poker_Simulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="zQ9-4x-ZTl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zz0-U6-qVg" userLabel="Main Stack">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poker Simulator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJa-xe-Yiw">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="31.5"/>
@@ -118,7 +120,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2X-7k-85S">
-                                        <rect key="frame" x="0.0" y="424" width="375" height="223"/>
+                                        <rect key="frame" x="0.0" y="424" width="375" height="174"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="Random Hand">
                                             <color key="titleColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,6 +145,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="jQg-O0-fd6"/>
                     <connections>
                         <outlet property="handLabel" destination="mhS-OV-B2f" id="xIG-z9-4gp"/>
                         <outletCollection property="communityCardImageViews" destination="J0u-hy-KSY" collectionClass="NSMutableArray" id="Kh4-w7-fYY"/>
@@ -156,6 +159,140 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="654" y="31"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="g5o-3X-4Do">
+            <objects>
+                <viewController id="S1x-kJ-vpo" customClass="SimulateManyRoundsViewController" customModule="Poker_Simulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lOR-vp-7Ec">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Q2N-Ye-5u2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xFW-OS-pI6" userLabel="Main Stack">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47b-fg-j9V">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUZ-5e-cvS" userLabel="Spacer">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVd-sH-Oi9" userLabel="Ruler">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
+                                                <color key="backgroundColor" red="0.50588238240000005" green="0.33725491169999999" blue="0.066666670139999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="wUZ-5e-cvS" firstAttribute="width" secondItem="47b-fg-j9V" secondAttribute="width" multiplier="0.5" id="jbj-dn-DA9"/>
+                                        </constraints>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yYg-72-qao">
+                                        <rect key="frame" x="0.0" y="30" width="375" height="388.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="graphBarCell" id="MnV-NH-c9L" customClass="BarGraphTableViewCell" customModule="Poker_Simulator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MnV-NH-c9L" id="bGZ-hh-WWY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4J-2c-yUI">
+                                                            <rect key="frame" x="8" y="8" width="41" height="27.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kO-qn-7ZN" userLabel="Bar" customClass="HorizontalGrapBarView" customModule="Poker_Simulator" customModuleProvider="target">
+                                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="43.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="p4J-2c-yUI" firstAttribute="leading" secondItem="bGZ-hh-WWY" secondAttribute="leadingMargin" id="Nu8-Bn-n98"/>
+                                                        <constraint firstAttribute="bottom" secondItem="8kO-qn-7ZN" secondAttribute="bottom" id="QHG-WN-4rA"/>
+                                                        <constraint firstItem="8kO-qn-7ZN" firstAttribute="top" secondItem="bGZ-hh-WWY" secondAttribute="top" id="SGr-0g-qmL"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="p4J-2c-yUI" secondAttribute="bottom" id="VKf-Kx-dgq"/>
+                                                        <constraint firstItem="8kO-qn-7ZN" firstAttribute="width" secondItem="bGZ-hh-WWY" secondAttribute="width" multiplier="0.5" id="grg-gs-lgs"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8kO-qn-7ZN" secondAttribute="trailing" id="mP6-ja-EF2"/>
+                                                        <constraint firstItem="p4J-2c-yUI" firstAttribute="top" secondItem="bGZ-hh-WWY" secondAttribute="topMargin" id="sTb-td-nUD"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="barView" destination="8kO-qn-7ZN" id="GKI-GJ-3Uu"/>
+                                                    <outlet property="label" destination="p4J-2c-yUI" id="STz-OD-hBd"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aOD-qi-xgW" userLabel="Controller">
+                                        <rect key="frame" x="0.0" y="418.5" width="375" height="179.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqj-Df-ggq">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="179.5"/>
+                                                <state key="normal" title="Simulate"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udD-vY-MAH">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="179.5"/>
+                                                <state key="normal" title="Stop"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9he-xh-Ahl">
+                                                <rect key="frame" x="250" y="0.0" width="125" height="179.5"/>
+                                                <state key="normal" title="Reset"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aOD-qi-xgW" firstAttribute="height" secondItem="xFW-OS-pI6" secondAttribute="height" multiplier="0.3" id="ChW-ui-bhA"/>
+                                    <constraint firstItem="47b-fg-j9V" firstAttribute="height" secondItem="xFW-OS-pI6" secondAttribute="height" multiplier="0.05" id="oAa-Ov-Md2"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TlE-du-6CB" firstAttribute="bottom" secondItem="xFW-OS-pI6" secondAttribute="bottom" id="CVw-fF-Xll"/>
+                            <constraint firstItem="Q2N-Ye-5u2" firstAttribute="top" secondItem="TlE-du-6CB" secondAttribute="top" id="DnB-Kx-PMj"/>
+                            <constraint firstItem="xFW-OS-pI6" firstAttribute="top" secondItem="TlE-du-6CB" secondAttribute="top" id="MeH-e7-0V1"/>
+                            <constraint firstItem="TlE-du-6CB" firstAttribute="trailing" secondItem="xFW-OS-pI6" secondAttribute="trailing" id="OKc-sy-eCJ"/>
+                            <constraint firstItem="Q2N-Ye-5u2" firstAttribute="leading" secondItem="TlE-du-6CB" secondAttribute="leading" id="Qla-Nb-nVE"/>
+                            <constraint firstItem="TlE-du-6CB" firstAttribute="bottom" secondItem="Q2N-Ye-5u2" secondAttribute="bottom" id="oFr-xU-CdJ"/>
+                            <constraint firstItem="TlE-du-6CB" firstAttribute="trailing" secondItem="Q2N-Ye-5u2" secondAttribute="trailing" id="pyV-Kk-hvX"/>
+                            <constraint firstItem="xFW-OS-pI6" firstAttribute="leading" secondItem="TlE-du-6CB" secondAttribute="leading" id="s9C-hF-YYe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TlE-du-6CB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="cuZ-Aa-K8u"/>
+                    <connections>
+                        <outlet property="graphTableView" destination="yYg-72-qao" id="WDK-nh-jjt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ely-Dm-5lD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="764"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="VHt-bE-RU8">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="U51-xX-zhX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O5f-dq-hDF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="5RW-Nu-cXd"/>
+                        <segue destination="S1x-kJ-vpo" kind="relationship" relationship="viewControllers" id="B2f-OH-xdx"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0T-s1-ZjN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-267.19999999999999" y="31.484257871064472"/>
         </scene>
     </scenes>
     <resources>

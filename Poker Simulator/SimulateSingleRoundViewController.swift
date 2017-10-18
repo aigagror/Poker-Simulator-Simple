@@ -8,13 +8,12 @@
 
 import UIKit
 
-class SimulatorViewController: UIViewController {
+class SimulateSingleRoundViewController: UIViewController {
     @IBOutlet var communityCardImageViews: [UIImageView]!
     
     @IBOutlet var playerCardImageViews: [UIImageView]!
     
     @IBOutlet weak var handLabel: UILabel!
-    
     
     var deck: [Card] = []
     
@@ -56,9 +55,14 @@ class SimulatorViewController: UIViewController {
             cardView.image = image
         }
         
+        var handCards = [Card]()
+        for i in 0..<7 {
+            handCards.append(deck[i])
+        }
         
+        let hand = Hand(cards: handCards)
+        
+        handLabel.text = hand.string
     }
-    
-    
 }
 

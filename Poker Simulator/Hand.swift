@@ -17,23 +17,52 @@ struct Hand {
     
     var values: [Int]
     
-    
     init(cards: [Card]) {
-        
-        self.handType = Hand.getHandType(cards: cards).0
-        
-        let n = Hand.getNumberOfValues(for: self.handType)
-        
-        values = Array(repeating: 0, count: n)
-        
-        let sortedCards = cards.sorted { (a, b) -> Bool in
-            a.rank > b.rank
+        (handType, values) = Hand.getHandType(cards: cards)
+    }
+    
+    init(index: Int = 0) {
+        guard let handType = HandType(rawValue: index) else {
+            fatalError("Could not get handtype raw value")
         }
+        self.handType = handType
         
-        for i in 0..<n {
-            values[i] = sortedCards[i].rank
+        values = []
+    }
+    
+    var string: String {
+        get {
+            switch handType {
+            case .highCard:
+                return "High Card"
+            case .onePair:
+                return "One Pair"
+            case .twoPair:
+                return "Two Pair"
+            case .threeOfAKind:
+                return "Three of a Kind"
+            case .straight:
+                return "Straight"
+            case .flush:
+                return "Flush"
+            case .fullHouse:
+                return "Full House"
+            case .fourOfAKind:
+                return "Four of a Kind"
+            case .straightFlush:
+                guard let highestValue = values.first else {
+                    return "Straight Flush"
+                }
+                
+                if highestValue == 14 {
+                    return "Royal Flush!"
+                } else {
+                    return "Straight Flush"
+                }
+            }
         }
     }
+    
     
     static private func getHandType(cards: [Card]) -> (HandType, [Int]) {
         assert(cards.count > 0)
@@ -79,6 +108,7 @@ struct Hand {
             
             for suitCount in suitCounter where suitCount.value >= 5 {
                 flushSuit = suitCount.key
+                break
             }
         }
         
@@ -101,9 +131,6 @@ struct Hand {
         // Multiple hand analysis
         var highestThreeOfAKind: Int?
         var highestPair: Int?
-        guard let highCard = sortedCards.first else {
-            fatalError("Cards were empty")
-        }
         
         for rankCount in rankCounter {
             let rank = rankCount.key
@@ -136,10 +163,9 @@ struct Hand {
         
         // Check for flush
         if let flushSuit = flushSuit {
-            var flushCards = [Card]()
-            for card in cards where card.suit == flushSuit {
-                flushCards.append(card)
-            }
+            let flushCards = cards.filter({ (card) -> Bool in
+                card.suit == flushSuit
+            })
             
             let sortedFlushCards = flushCards.sorted(by: { (a, b) -> Bool in
                 a.rank > b.rank
@@ -190,10 +216,9 @@ struct Hand {
         
         // Check for pair
         if let pair = highestPair {
-            var singleCards = [Card]()
-            for card in cards where card.rank != pair {
-                singleCards.append(card)
-            }
+            let singleCards = cards.filter({ (card) -> Bool in
+                card.rank != pair
+            })
             
             let sortedSingleCards = singleCards.sorted(by: { (a, b) -> Bool in
                 a.rank > b.rank
@@ -211,21 +236,5 @@ struct Hand {
         }
         
         return (.highCard, ranks)
-    }
-    
-    
-    
-    
-    static private func getNumberOfValues(for handType: HandType) -> Int {
-        switch handType {
-        case .highCard, .flush:
-            return 5
-        case .onePair:
-            return 4
-        case .twoPair:
-            return 3
-        default:
-            return 1
-        }
     }
 }

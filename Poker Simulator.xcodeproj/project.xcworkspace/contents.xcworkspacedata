@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Poker Simulator.xcodeproj">
+      location = "group:/Users/Eddie/Documents/Programming/iOS/Poker Simulator/Poker Simulator/SimulateSingleRoundViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
