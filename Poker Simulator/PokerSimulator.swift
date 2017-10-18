@@ -13,6 +13,8 @@ class PokerSimulator {
     static var totalTrials = 0
     static var handCounter = [HandType:Int]()
     
+    private static let simulatorLock = NSLock()
+    
     private static var simulating = false
     
     private static let simulatorQueue = DispatchQueue(label: "simulatorQueue")
@@ -23,6 +25,7 @@ class PokerSimulator {
         if !simulating {
             simulating = true
             simulatorQueue.async {
+                simulatorLock.lock()
                 var deck = Card.getNewDeck()
                 
                 while simulating {
@@ -68,6 +71,8 @@ class PokerSimulator {
                         }
                     }
                 }
+                simulatorLock.unlock()
+
             }
         }
     }
@@ -79,6 +84,8 @@ class PokerSimulator {
     
     static func reset(update tableView: UITableView? = nil) {
         stopSimulating()
+        
+        simulatorLock.lock()
         
         PokerSimulator.handCounter = [:]
         PokerSimulator.totalTrials = 0
@@ -94,5 +101,7 @@ class PokerSimulator {
                 cell.barValue = 0.0
             }
         }
+        
+        simulatorLock.unlock()
     }
 }

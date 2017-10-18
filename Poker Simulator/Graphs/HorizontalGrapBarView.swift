@@ -29,6 +29,12 @@ class HorizontalGrapBarView: UIView {
             setNeedsDisplay()
         }
     }
+    
+    var numberOfTicks: Int = 11 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
 
     
     // Only override draw() if you perform custom drawing.
@@ -44,11 +50,23 @@ class HorizontalGrapBarView: UIView {
         let width = self.bounds.width
         let height = self.bounds.height
         
+        let pencil = UIBezierPath()
+        pencil.lineWidth = 1.0
+        let tickColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        tickColor.set()
+        for i in 0..<numberOfTicks {
+            let xPos = CGFloat(i) / CGFloat(numberOfTicks - 1) * width
+            pencil.move(to: CGPoint(x: xPos, y: 0))
+            pencil.addLine(to: CGPoint(x: xPos, y: height))
+            pencil.stroke()
+        }
+        
+        
         let barRect = CGRect(origin: .zero, size: CGSize(width: width * CGFloat(value * scale), height: height))
         
         let barPath = UIBezierPath(rect: barRect)
         
-        color.set()
+        color.withAlphaComponent(0.7).set()
         
         barPath.fill()
     }
