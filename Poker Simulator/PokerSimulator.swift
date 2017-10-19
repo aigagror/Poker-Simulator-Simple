@@ -20,11 +20,13 @@ class PokerSimulator {
     private static let simulatorQueue = DispatchQueue(label: "simulatorQueue")
     
     static func startSimulating(update tableView: UITableView? = nil) -> Void {
+        
         let updateFrequency = 1
         
         if !simulating {
             simulating = true
             simulatorQueue.async {
+                
                 simulatorLock.lock()
                 var deck = Card.getNewDeck()
                 
@@ -72,7 +74,6 @@ class PokerSimulator {
                     }
                 }
                 simulatorLock.unlock()
-
             }
         }
     }

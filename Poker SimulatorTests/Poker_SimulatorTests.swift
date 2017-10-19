@@ -254,8 +254,37 @@ class Poker_SimulatorTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
+        
+        let numberOfTrials = 100_000
+        
         self.measure {
             // Put the code you want to measure the time of here.
+            
+            var totalTrials = 0
+            var handCounter = [HandType:Int]()
+            
+            var deck = Card.getNewDeck()
+            
+            for _ in 1...numberOfTrials {
+                Card.shuffle(cards: &deck, firstN: 7)
+                
+                var first7 = [Card]()
+                
+                for i in 0..<7 {
+                    first7.append(deck[i])
+                }
+                
+                let hand = Hand(cards: first7)
+                let handType = hand.handType
+                
+                if let count = handCounter[handType] {
+                    handCounter[handType] = count + 1
+                } else {
+                    handCounter[handType] = 1
+                }
+                
+                totalTrials += 1
+            }
         }
     }
     
