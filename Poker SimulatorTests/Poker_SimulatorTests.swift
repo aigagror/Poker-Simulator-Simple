@@ -26,7 +26,8 @@ class Poker_SimulatorTests: XCTestCase {
     // TODO: Add test cases here
     
     func testPerformanceExample() {
-        // This is an example of a performance test case.
+        // TODO: Test the speed of the simulator
+        
         self.measure {
             // Put the code you want to measure the time of here.
         }

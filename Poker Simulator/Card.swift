@@ -59,17 +59,39 @@ struct Card {
         return deck
     }
     
+    
+    /// Shuffles the first N cards of the deck
+    ///
+    /// - Parameters:
+    ///   - cards:
+    ///   - firstN:
     static func shuffle(cards: inout [Card], firstN: Int = 52) {
+        // TODO: Improve the speed of this function
         assert(firstN > 0)
         assert(firstN <= 52)
         
-        let firstN = min(firstN, cards.count)
+        var newCards = [Card]()
+        var cardsIndexSet = Set<Int>()
+        for card in cards {
+            cardsIndexSet.insert(card.getIndex())
+        }
+        var usedCardsIndexSet = Set<Int>()
         
-        for i in 0..<firstN {
-            let randIndex = Int(arc4random_uniform(UInt32(cards.count)))
-            let tempCard = cards[i]
-            cards[i] = cards[randIndex]
-            cards[randIndex] = tempCard
+        for _ in 0..<cards.count {
+            var randomCardIndex = Int(arc4random_uniform(52))
+            
+            while usedCardsIndexSet.contains(randomCardIndex) || !cardsIndexSet.contains(randomCardIndex) {
+                randomCardIndex = Int(arc4random_uniform(52))
+            }
+            
+            let card = Card(index: randomCardIndex)
+            newCards.append(card)
+            usedCardsIndexSet.insert(randomCardIndex)
+        }
+        
+        cards.removeAll()
+        for card in newCards {
+            cards.append(card)
         }
     }
 }
