@@ -103,59 +103,42 @@ struct Hand: Hashable {
     static private func getHandType(cards: [Card]) -> (HandType, [Int]) {
         assert(cards.count > 0)
         
+        // TODO: This function is faulty. Fix with test cases
+        
         var straight: Int?
         var flushSuit: Suit?
         
         let sortedCards = cards.sorted { (a, b) -> Bool in
             a.rank > b.rank
         }
-    
         
         if cards.count >= 5 {
-            
-            var rankSet = Set<Int>()
-            for card in cards {
-                rankSet.insert(card.rank)
-                
-                if card.rank == 14 {
-                    // small ace
-                    rankSet.insert(1)
-                }
-            }
-            
-            let sortedRanks = rankSet.sorted(by: { (a, b) -> Bool in
-                return a > b
-            })
-            
             // Check if there's a straight
-            if sortedRanks.count >= 5 {
-                for i in 0..<(sortedRanks.count - 5 + 1) {
-                    var currValue = sortedRanks[i]
+            for i in 0..<(sortedCards.count - 5 + 1) {
+                var currValue = sortedCards[i].rank
+                
+                var foundStraight = true
+                for j in (i+1)...(i+4) {
+                    let nextValue = sortedCards[j].rank
                     
-                    var foundStraight = true
-                    for j in (i+1)...(i+4) {
-                        let nextValue = sortedRanks[j]
-                        
-                        if nextValue != currValue - 1 {
-                            foundStraight = false
-                            break
-                        }
-                        currValue = nextValue
-                    }
-                    if foundStraight {
-                        straight = i
+                    if nextValue != currValue - 1 {
+                        foundStraight = false
                         break
                     }
+                    currValue = nextValue
+                }
+                if foundStraight {
+                    straight = i
+                    break
                 }
             }
-            
             
             // Check if there's a flush
             var suitCounter = [Suit:Int]()
             for card in cards {
                 let suit = card.suit
                 if let count = suitCounter[suit] {
-                    suitCounter[suit] = count + 1
+                    suitCounter[suit] = count
                 } else {
                     suitCounter[suit] = 1
                 }
@@ -177,7 +160,7 @@ struct Hand: Hashable {
         for card in cards {
             let rank = card.rank
             if let count = rankCounter[rank] {
-                rankCounter[rank] = count + 1
+                rankCounter[rank] = count
             } else {
                 rankCounter[rank] = 1
             }

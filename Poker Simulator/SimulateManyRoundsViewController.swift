@@ -22,21 +22,21 @@ class SimulateManyRoundsViewController: UIViewController, UITableViewDelegate, U
     
     @IBAction func startSimulating(_ sender: Any) {
         
-        PokerSimulator.startSimulating(update: graphTableView)
+        // TODO: Add code here
         
     }
     
     
     @IBAction func stopSimulating(_ sender: Any) {
         
-        PokerSimulator.stopSimulating()
+        // TODO: Add code here
         
     }
     
     
     @IBAction func reset(_ sender: Any) {
         
-        PokerSimulator.reset(update: graphTableView)
+        // TODO: Add code here
         
     }
     
