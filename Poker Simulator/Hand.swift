@@ -160,7 +160,7 @@ struct Hand: Hashable {
         for card in cards {
             let rank = card.rank
             if let count = rankCounter[rank] {
-                rankCounter[rank] = count
+                rankCounter[rank] = count + 1
             } else {
                 rankCounter[rank] = 1
             }
@@ -266,7 +266,7 @@ struct Hand: Hashable {
                 return card.rank
             })
             
-            return (.onePair, ranks)
+            return (.straightFlush, ranks)
         }
         
         let ranks = sortedCards.map { (card) -> Int in
